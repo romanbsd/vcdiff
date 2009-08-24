@@ -123,6 +123,7 @@ static VALUE _wrap_VCDiffEncoder_Encode(VALUE self, VALUE arg) {
 
   	if (result) {
 		str = rb_str_new(output.data(), output.length());
+		output.clear();
 		return str;
   	} else {
 		return Qnil;
@@ -167,6 +168,7 @@ static VALUE _wrap_VCDiffDecoder_Decode(VALUE self, VALUE dict, VALUE delta) {
 	
   	if (result) {
 		str = rb_str_new(output.data(), output.length());
+		output.clear();
 		return str;
   	} else {
 		return Qnil;
